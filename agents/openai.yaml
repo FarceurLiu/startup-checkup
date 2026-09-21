@@ -1,0 +1,6 @@
+interface:
+  display_name: "創業檢查"
+  short_description: "從階段與證據找出主要卡點，產出一個可驗證的下一步"
+  default_prompt: "使用 $startup-checkup，依目前資料做創業檢查。先分清事實與假設，再找一個主要卡點；只做診斷與最小驗證草案，不修改專案或對外執行。"
+policy:
+  allow_implicit_invocation: true
