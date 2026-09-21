@@ -68,6 +68,21 @@ class ValidatorTests(unittest.TestCase):
         path.write_text(json.dumps(payload), encoding="utf-8")
         self.assertIn("case_assertions", self.error_codes())
 
+    def test_additional_case_is_allowed(self) -> None:
+        path = self.root / "tests/cases.json"
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        extra = dict(payload["cases"][0], id="extra")
+        payload["cases"].append(extra)
+        path.write_text(json.dumps(payload), encoding="utf-8")
+        self.assertEqual(self.error_codes(), set())
+
+    def test_missing_boundary_coverage(self) -> None:
+        path = self.root / "tests/cases.json"
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload["cases"] = [case for case in payload["cases"] if case["category"] != "boundary"]
+        path.write_text(json.dumps(payload), encoding="utf-8")
+        self.assertIn("case_categories", self.error_codes())
+
     def test_invocation_policy_type(self) -> None:
         self.replace("agents/openai.yaml", "allow_implicit_invocation: true", "allow_implicit_invocation: maybe")
         self.assertIn("agent_policy", self.error_codes())

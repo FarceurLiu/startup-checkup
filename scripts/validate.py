@@ -19,6 +19,7 @@ REQUIRED = (
     "references/source-map.md", "templates/assessment.md",
     "templates/experiment.md", "scripts/validate.py",
     "tests/cases.json", "tests/test_validator.py", "tests/README.md",
+    "tests/VALIDATION.md", "examples/service-delivery.md", "CHANGELOG.md", "LICENSE",
 )
 STATUSES = ("已支持", "部分支持", "待驗證", "本輪反證", "不適用")
 
@@ -105,7 +106,7 @@ def validate(root: Path) -> dict[str, Any]:
     try:
         payload = json.loads(read("tests/cases.json"))
         cases = payload.get("cases", []) if isinstance(payload, dict) else []
-        check(isinstance(cases, list) and len(cases) == 5, "case_count", "Expected five behavioral scenarios.")
+        check(isinstance(cases, list) and len(cases) >= 5, "case_count", "Expected at least five behavioral scenarios.")
         if not isinstance(cases, list):
             cases = []
         case_objects = [case for case in cases if isinstance(case, dict)]
@@ -114,8 +115,9 @@ def validate(root: Path) -> dict[str, Any]:
         check(all(isinstance(item, str) for item in ids) and len(set(map(str, ids))) == len(ids),
               "case_id", "Case IDs must be unique strings.")
         counts = Counter(str(case.get("category")) for case in case_objects)
-        check(counts == {"typical": 2, "confusing": 2, "boundary": 1},
-              "case_categories", "Expected two typical, two confusing, one boundary scenario.")
+        check(set(counts) <= {"typical", "confusing", "boundary"}
+              and counts["typical"] >= 2 and counts["confusing"] >= 2 and counts["boundary"] >= 1,
+              "case_categories", "Expected at least two typical, two confusing, and one boundary scenario; no unknown categories.")
         for case in case_objects:
             ident = str(case.get("id", "?"))
             check(isinstance(case.get("prompt"), str) and bool(case["prompt"].strip()),
