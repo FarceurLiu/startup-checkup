@@ -8,7 +8,7 @@ description: >-
   也適用 startup validation、business diagnosis、customer discovery。
   不用於單純摘要、文案潤飾、程式除錯、介面美化、已核准功能的純工程拆解、投資標的建議或法律意見。
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   language: "zh-TW"
 ---
 

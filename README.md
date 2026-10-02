@@ -2,7 +2,7 @@
 
 給創業者、獨立開發者與小型團隊的 Codex skill：根據你提供的資料，找出目前最值得處理的一個問題，設計下一步驗證。
 
-**版本：1.1.0（試用）｜預設台灣繁體中文**
+**版本：1.1.1（試用）｜預設台灣繁體中文**
 
 適合用來討論「接下來該投入什麼」。它會區分事實、推測與資料缺口，不替事業打總分，也不預測成功率。模型行為的驗證範圍見[驗證紀錄](tests/VALIDATION.md)。
 
@@ -34,7 +34,7 @@
 
 需要能使用本機 skills 的 Codex 環境，以及該環境所需的帳號與模型服務。本套件沒有自己的服務、追蹤碼或 API key；一般診斷不需要 Python。其他 agent 平台尚未驗證。
 
-1. 從 [v1.1.0 原始碼 ZIP](https://github.com/FarceurLiu/startup-checkup/archive/refs/tags/v1.1.0.zip)下載並解壓縮，或用 Git 取得 [v1.1.0](https://github.com/FarceurLiu/startup-checkup/tree/v1.1.0) 的原始碼。
+1. 從 [v1.1.1 原始碼 ZIP](https://github.com/FarceurLiu/startup-checkup/archive/refs/tags/v1.1.1.zip)下載並解壓縮，或到[版本發布頁](https://github.com/FarceurLiu/startup-checkup/releases/tag/v1.1.1)查看更新內容。
 2. 將包含 `SKILL.md` 的資料夾命名為 `startup-checkup`，保留其中的子資料夾。
 3. 選一個安裝位置，放入完整資料夾：
 
