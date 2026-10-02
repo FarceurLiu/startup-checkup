@@ -2,7 +2,7 @@
 
 給創業者、獨立開發者與小型團隊的 Codex skill：根據你提供的資料，找出目前最值得處理的一個問題，設計下一步驗證。
 
-**版本：1.1.1（試用）｜預設台灣繁體中文**
+**版本：1.1.2（試用）｜預設台灣繁體中文**
 
 適合用來討論「接下來該投入什麼」。它會區分事實、推測與資料缺口，不替事業打總分，也不預測成功率。模型行為的驗證範圍見[驗證紀錄](tests/VALIDATION.md)。
 
@@ -34,7 +34,7 @@
 
 需要能使用本機 skills 的 Codex 環境，以及該環境所需的帳號與模型服務。本套件沒有自己的服務、追蹤碼或 API key；一般診斷不需要 Python。其他 agent 平台尚未驗證。
 
-1. 從 [v1.1.1 原始碼 ZIP](https://github.com/FarceurLiu/startup-checkup/archive/refs/tags/v1.1.1.zip)下載並解壓縮，或到[版本發布頁](https://github.com/FarceurLiu/startup-checkup/releases/tag/v1.1.1)查看更新內容。
+1. 從 [v1.1.2 原始碼 ZIP](https://github.com/FarceurLiu/startup-checkup/archive/refs/tags/v1.1.2.zip)下載並解壓縮，或到[版本發布頁](https://github.com/FarceurLiu/startup-checkup/releases/tag/v1.1.2)查看更新內容。
 2. 將包含 `SKILL.md` 的資料夾命名為 `startup-checkup`，保留其中的子資料夾。
 3. 選一個安裝位置，放入完整資料夾：
 
@@ -106,4 +106,4 @@ $startup-checkup
 
 維護者請看[測試說明](tests/README.md)及[驗證紀錄](tests/VALIDATION.md)。結構檢查通過不代表模型行為或商業成效已通過。
 
-本方法由 FarceurLiu 根據個人的學習與成長經驗整理，再轉成 AI 可使用的診斷流程。採用 [MIT License](LICENSE)；方法來源與適用界線見[來源說明](references/source-map.md)。
+本套件採用 [MIT License](LICENSE)。框架用途、能力盤點限制與技術參考見[方法說明](references/source-map.md)。

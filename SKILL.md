@@ -8,7 +8,7 @@ description: >-
   也適用 startup validation、business diagnosis、customer discovery。
   不用於單純摘要、文案潤飾、程式除錯、介面美化、已核准功能的純工程拆解、投資標的建議或法律意見。
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
   language: "zh-TW"
 ---
 
@@ -31,7 +31,7 @@ metadata:
 - 證據紀錄、採用與付費分流、實驗及簡化計算：[證據與驗證規則](references/evidence-and-experiments.md)。涉及指標或設計驗證時讀取。
 - 完整檢查輸出：[診斷模板](templates/assessment.md)。
 - 最小實驗：[實驗模板](templates/experiment.md)。
-- 方法來源與使用界線：[來源對照](references/source-map.md)。處理來源問題時讀取。
+- 框架用途、能力盤點限制與技術參考：[方法說明](references/source-map.md)。需要確認方法適用範圍或技術格式來源時讀取。
 - 安裝及使用：[README](README.md)。驗證時才讀取 [測試案例](tests/cases.json) 及 [測試說明](tests/README.md)。
 
 ## 第一步：鎖定本輪決策
